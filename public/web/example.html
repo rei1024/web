@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/web/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <strong>Web</strong>
+        <p>思考とコードの備忘録</p>
+      </nav>
+    </header>
+
+    <main>
+      <article>
+        <header>
+          <h1>Classless CSSで実現する究極のシンプルデザイン</h1>
+          <p>
+            <time datetime="2026-04-07">2026年4月7日</time> ・ 5分で読めます
+          </p>
+        </header>
+
+        <p>
+          クラスを一切使わずに、HTMLタグそのものにスタイルを当てる手法は、
+          <strong>「コンテンツ・ファースト」</strong>なブログに最適です。
+        </p>
+
+        <h2>なぜClasslessなのか？</h2>
+        <p>
+          HTMLがスッキリし、メンテナンス性が向上します。また、将来的にCSSフレームワークを
+          乗り換える際も、HTML側を修正する必要がありません。
+        </p>
+
+        <blockquote>
+          「シンプルであることは、究極の洗練である。」
+          <footer>— レオナルド・ダ・ヴィンチ</footer>
+        </blockquote>
+
+        <h3>コード例</h3>
+        <p>例えば、以下のようなCSS変数を定義して管理します。</p>
+        <pre><code>:root {
+  --primary: #007bff;
+  --max-width: 720px;
+}</code></pre>
+
+        <h3>比較表</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>手法</th>
+              <th>メリット</th>
+              <th>デメリット</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Classless</td>
+              <td>HTMLが綺麗、軽量</td>
+              <td>複雑なレイアウトに不向き</td>
+            </tr>
+            <tr>
+              <td>Utility-First</td>
+              <td>自由度が高い</td>
+              <td>HTMLが煩雑になる</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+    </main>
+
+    <footer>
+      <hr />
+      <p>
+        Created By Rei <span style="margin-left: 12px"></span>
+        <a href="https://github.com/rei1024/web">GitHub</a>
+      </p>
+    </footer>
+  </body>
+</html>

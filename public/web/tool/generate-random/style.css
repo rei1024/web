@@ -1,0 +1,9 @@
+#out {
+  word-break: break-word;
+  font-family: "Courier New", Consolas, monospace;
+  font-size: 1.2rem;
+}
+
+.ms-4 {
+  margin-inline-start: 16px;
+}

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="robots" content="noindex" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <!-- CSP -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self'"
+    />
+    <script src="./index.js" type="module"></script>
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+    <link rel="stylesheet" href="/web/style.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>ランダム文字列生成</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <strong><a href="/web">Web</a></strong> &gt;
+        <strong><a href="/web/tool">ツール</a></strong>
+      </nav>
+    </header>
+    <main>
+      <article>
+        <h1>ランダム文字列生成</h1>
+
+        <div class="mb">
+          <label for="len">長さ</label>
+          <input id="len" type="number" value="32" />
+        </div>
+        <div class="mb">
+          <label for="digit">数字を含める</label>
+          <input id="digit" type="checkbox" checked value="1" />
+        </div>
+        <div class="mb">
+          <label for="special">記号を含める (Amazon Cognito)</label>
+          <input id="special" type="checkbox" value="1" />
+        </div>
+        <div class="mb">
+          <label for="upper">大文字を含める</label>
+          <input id="upper" type="checkbox" value="1" checked />
+        </div>
+        <div class="mb">
+          <label for="lower">小文字を含める</label>
+          <input id="lower" type="checkbox" value="1" checked />
+        </div>
+        <div class="mb">
+          <button id="gen">生成</button>
+        </div>
+        <div class="mb">
+          <span id="out"></span>
+        </div>
+        <div class="mb">
+          <button id="copy">コピー</button>
+          <button id="clear_clipboard">クリップボードクリア</button>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>

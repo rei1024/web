@@ -1,0 +1,13 @@
+{
+  "name": "@rei1024/web",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "serve public",
+    "fmt": "prettier . --write"
+  },
+  "dependencies": {
+    "prettier": "^3.8.1",
+    "serve": "^14.2.6"
+  }
+}

@@ -36,21 +36,20 @@ function gen(n, options) {
     throw new Error("1つ以上の文字種類を含めてください。");
   }
   const alpha = "abcdefghijklmnopqrstuvwxyz";
+  const chars = [
+    ...(options.includeLower ? alpha : []),
+    ...(options.includeUpper ? alpha.toUpperCase() : []),
+    ...(options.includeDigit ? "0123456789" : []),
+    // https://docs.aws.amazon.com/cognito/latest/developerguide/managing-users-passwords.html
+    ...(options.includeSpecial
+      ? `^ $ * . [ ] { } ( ) ? " ! @ # % & / \ , > < ' : ; | _ ~ \` = + - `
+          .split(" ")
+          .join("")
+      : []),
+  ];
   return Array(n)
     .fill(0)
-    .map(() =>
-      sample([
-        ...(options.includeLower ? alpha : []),
-        ...(options.includeUpper ? alpha.toUpperCase() : []),
-        ...(options.includeDigit ? "0123456789" : []),
-        // https://docs.aws.amazon.com/cognito/latest/developerguide/managing-users-passwords.html
-        ...(options.includeSpecial
-          ? `^ $ * . [ ] { } ( ) ? " ! @ # % & / \ , > < ' : ; | _ ~ \` = + - `
-              .split(" ")
-              .join("")
-          : []),
-      ]),
-    )
+    .map(() => sample(chars))
     .join("");
 }
 

@@ -1,8 +1,27 @@
+import { getViewportPx } from "./viewport.js";
+
 const $output = document.querySelector("#output");
+
 function update() {
+  const viewport = getViewportPx("");
+  const viewportS = getViewportPx("s");
+  const viewportL = getViewportPx("l");
+
   $output.textContent = `Window
   幅  : ${window.innerWidth}px
   高さ: ${window.innerHeight}px
+
+Viewport:
+  幅  : ${viewport.width}px
+  高さ: ${viewport.height}px
+
+Viewport Small:
+  幅  : ${viewportS.width}px
+  高さ: ${viewportS.height}px
+
+Viewport Large:
+  幅  : ${viewportL.width}px
+  高さ: ${viewportL.height}px
 
 Screen
   利用可能幅   : ${window.screen.availWidth}

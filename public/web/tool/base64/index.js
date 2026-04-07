@@ -191,6 +191,20 @@ $outputTypes.forEach((e) => {
   });
 });
 
+const $encodeTypesWrapper = document.querySelector(".js-encode-types-wrapper");
+
+const $encodeTypes = [
+  ...document.querySelectorAll('input[name="encode-type"]'),
+];
+let encodeType = "base64";
+
+$encodeTypes.forEach((e) => {
+  e.addEventListener("change", () => {
+    encodeType = e.value;
+    update();
+  });
+});
+
 const $input = document.querySelector("#input");
 const $output = document.querySelector("#output");
 
@@ -199,6 +213,7 @@ $output.addEventListener("input", update);
 
 function update() {
   $outputTypesWrapper.style.display = type === "decode" ? "" : "none";
+  $encodeTypesWrapper.style.display = type === "decode" ? "none" : "";
   if (type === "decode") {
     $input.placeholder = "Base64";
     $output.placeholder = outputType === "text" ? "Text" : "Hex";
@@ -228,7 +243,9 @@ function update() {
     case "encode": {
       try {
         const utf8 = new TextEncoder().encode($input.value);
-        const base64 = encodeBase64(utf8);
+        const base64 = (
+          encodeType === "base64url" ? convertBase64ToBase64url : (x) => x
+        )(encodeBase64(utf8));
         $output.value = base64;
       } catch (error) {
         $output.disabled = true;

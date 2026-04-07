@@ -21,41 +21,44 @@
           <h1>Base64</h1>
         </header>
         <div style="display: flex; flex-direction: column; gap: 8px">
-          <div class="radio-group">
-            <label>
-              <input type="radio" name="type" value="decode" checked />
-              <span>デコード</span>
-            </label>
-            <label>
-              <input type="radio" name="type" value="encode" />
-              <span>エンコード</span>
-            </label>
+          <div>
+            <div class="radio-group">
+              <label>
+                <input type="radio" name="type" value="decode" checked />
+                <span>デコード</span>
+              </label>
+              <label>
+                <input type="radio" name="type" value="encode" />
+                <span>エンコード</span>
+              </label>
+            </div>
           </div>
 
           <textarea id="input" rows="4"></textarea>
 
-          <div class="radio-group js-output-types-wrapper">
-            <label>
-              <input type="radio" name="output-type" value="text" checked />
-              <span>テキスト（UTF-8）</span>
-            </label>
-            <label>
-              <input type="radio" name="output-type" value="hex" />
-              <span>16進数（Hex）</span>
-            </label>
-          </div>
+          <div>
+            <div class="radio-group js-output-types-wrapper">
+              <label>
+                <input type="radio" name="output-type" value="text" checked />
+                <span>テキスト（UTF-8）</span>
+              </label>
+              <label>
+                <input type="radio" name="output-type" value="hex" />
+                <span>16進数（Hex）</span>
+              </label>
+            </div>
 
-          <!-- TODO -->
-          <!-- <div class="radio-group js-encodes-types-wrapper">
-            <label>
-              <input type="radio" name="encode-type" value="normal" checked />
-              <span>Base64</span>
-            </label>
-            <label>
-              <input type="radio" name="encode-type" value="url" />
-              <span>Base64URL</span>
-            </label>
-          </div> -->
+            <div class="radio-group js-encode-types-wrapper">
+              <label>
+                <input type="radio" name="encode-type" value="base64" checked />
+                <span>Base64</span>
+              </label>
+              <label>
+                <input type="radio" name="encode-type" value="base64url" />
+                <span>Base64URL</span>
+              </label>
+            </div>
+          </div>
 
           <textarea id="output" rows="4"></textarea>
 

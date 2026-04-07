@@ -26,3 +26,5 @@ window.screen.orientation.addEventListener("change", () => {
   update();
 });
 update();
+
+export {};

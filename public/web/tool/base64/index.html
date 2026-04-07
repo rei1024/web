@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Base64</title>
+    <link rel="stylesheet" href="/web/style.css" />
+    <script type="module" src="./index.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <strong><a href="/web">Web</a></strong> &gt;
+        <strong><a href="/web/tool">ツール</a></strong>
+      </nav>
+    </header>
+
+    <main>
+      <article>
+        <header>
+          <h1>Base64</h1>
+        </header>
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <div class="radio-group">
+            <label>
+              <input type="radio" name="type" value="decode" checked />
+              <span>デコード</span>
+            </label>
+            <label>
+              <input type="radio" name="type" value="encode" />
+              <span>エンコード</span>
+            </label>
+          </div>
+
+          <textarea id="input" rows="4"></textarea>
+
+          <div class="radio-group js-output-types-wrapper">
+            <label>
+              <input type="radio" name="output-type" value="text" checked />
+              <span>テキスト（UTF-8）</span>
+            </label>
+            <label>
+              <input type="radio" name="output-type" value="hex" />
+              <span>16進数（Hex）</span>
+            </label>
+          </div>
+
+          <!-- TODO -->
+          <!-- <div class="radio-group js-encodes-types-wrapper">
+            <label>
+              <input type="radio" name="encode-type" value="normal" checked />
+              <span>Base64</span>
+            </label>
+            <label>
+              <input type="radio" name="encode-type" value="url" />
+              <span>Base64URL</span>
+            </label>
+          </div> -->
+
+          <textarea id="output" rows="4"></textarea>
+
+          <button id="copy">コピー</button>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>

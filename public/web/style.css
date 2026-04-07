@@ -6,6 +6,7 @@
   --border: #dee2e6;
   --max-width: 720px;
   --line-height: 1.75;
+  --button-weight: 600;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -119,6 +120,7 @@ pre code {
 
 /* 6. フォーム（検索など） */
 input,
+textarea,
 button {
   font: inherit;
   padding: 0.5rem 0.8rem;
@@ -126,6 +128,7 @@ button {
   border-radius: 4px;
   background: var(--bg);
   color: var(--text);
+  font-weight: var(--button-weight);
 }
 
 button {
@@ -142,4 +145,64 @@ button:hover {
 
 .ms-4 {
   margin-inline-start: 16px;
+}
+
+/* コンテナ: インラインブロックでボタンらしく */
+.radio-group {
+  display: inline-flex;
+  gap: 2px; /* ボタン同士のわずかな隙間 */
+  background-color: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 4px;
+  overflow: hidden;
+}
+
+/* ラジオボタン本体は完全に消去 */
+.radio-group input[type="radio"] {
+  display: none;
+}
+
+/* ラベル要素: クリックエリアの確保 */
+.radio-group label {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+/* ラベル内のテキスト/ボタン本体 */
+.radio-group span {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 7px;
+  font-size: 0.85rem;
+  font-weight: var(--button-weight);
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+}
+
+/* ホバー時の微かな変化 */
+.radio-group label:hover span {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+@media (prefers-color-scheme: dark) {
+  .radio-group label:hover span {
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+}
+
+/* 選択時のアニメーション的な見た目 */
+.radio-group input[type="radio"]:checked + span {
+  background-color: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px); /* 少し浮かせるとモダン */
+}
+
+/* 選択時のアクティブ感（押し込み） */
+.radio-group label:active span {
+  transform: translateY(0);
 }

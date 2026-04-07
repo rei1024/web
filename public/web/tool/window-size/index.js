@@ -44,6 +44,11 @@ window.screen.addEventListener("change", () => {
 window.screen.orientation.addEventListener("change", () => {
   update();
 });
+document.querySelector("#input").addEventListener("focus", () => {
+  setTimeout(() => {
+    update();
+  }, 4);
+});
 update();
 
 export {};

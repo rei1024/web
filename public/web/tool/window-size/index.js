@@ -12,16 +12,16 @@ function update() {
   高さ: ${window.innerHeight}px
 
 Viewport:
-  幅  : ${viewport.width}px
-  高さ: ${viewport.height}px
+  幅  : ${viewport.width.toFixed(2)}px
+  高さ: ${viewport.height.toFixed(2)}px
 
 Viewport Small:
-  幅  : ${viewportS.width}px
-  高さ: ${viewportS.height}px
+  幅  : ${viewportS.width.toFixed(2)}px
+  高さ: ${viewportS.height.toFixed(2)}px
 
 Viewport Large:
-  幅  : ${viewportL.width}px
-  高さ: ${viewportL.height}px
+  幅  : ${viewportL.width.toFixed(2)}px
+  高さ: ${viewportL.height.toFixed(2)}px
 
 Screen
   利用可能幅   : ${window.screen.availWidth}

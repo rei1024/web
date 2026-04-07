@@ -219,7 +219,7 @@ function update() {
     $output.placeholder = outputType === "text" ? "Text" : "Hex";
   } else {
     $input.placeholder = "Text";
-    $output.placeholder = "Base64";
+    $output.placeholder = encodeType === "base64url" ? "Base64URL" : "Base64";
   }
 
   $output.disabled = false;

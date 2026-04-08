@@ -226,15 +226,19 @@ function update() {
   switch (type) {
     case "decode": {
       try {
-        const array = decodeBase64($input.value);
+        const array = Uint8Array.fromBase64
+          ? Uint8Array.fromBase64($input.value)
+          : decodeBase64($input.value);
         if (outputType === "text") {
           $output.value = new TextDecoder().decode(array);
         } else {
-          const hex = [...array].map((x) => x.toString(16).padStart(2, "0"));
-          const hexString = hex.join("");
-          $output.value = hexString;
+          const hex = Uint8Array.prototype.toHex
+            ? array.toHex()
+            : [...array].map((x) => x.toString(16).padStart(2, "0")).join("");
+          $output.value = hex;
         }
       } catch (error) {
+        console.error(error);
         $output.disabled = true;
         $output.value = "[デコードに失敗しました。]";
       }
@@ -243,9 +247,11 @@ function update() {
     case "encode": {
       try {
         const utf8 = new TextEncoder().encode($input.value);
-        const base64 = (
-          encodeType === "base64url" ? convertBase64ToBase64url : (x) => x
-        )(encodeBase64(utf8));
+        const base64 = Uint8Array.prototype.toBase64
+          ? utf8.toBase64({ alphabet: encodeType })
+          : (encodeType === "base64url" ? convertBase64ToBase64url : (x) => x)(
+              encodeBase64(utf8),
+            );
         $output.value = base64;
       } catch (error) {
         $output.disabled = true;

@@ -32,9 +32,12 @@ Screen
   色深度: ${window.screen.colorDepth}
   ビット深度: ${window.screen.pixelDepth}
   向き: ${window.screen.orientation.type}
-  角度: ${window.screen.orientation.angle}`;
+  角度: ${window.screen.orientation.angle}
+  
+devicePixelRatio: ${window.devicePixelRatio}
+  `;
 }
-// window.screen.addEventListener("");
+
 window.addEventListener("resize", () => {
   update();
 });

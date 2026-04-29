@@ -16,7 +16,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
-      - uses: actions/upload-pages-artifact@v4
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: public/web
 
@@ -31,5 +31,5 @@ jobs:
       pages: write
       id-token: write
     steps:
-      - uses: actions/deploy-pages@v4
+      - uses: actions/deploy-pages@v5
         id: deployment

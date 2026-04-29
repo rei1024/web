@@ -37,6 +37,7 @@ $file.addEventListener("change", () => {
   $inputImage.onload = () => {
     $canvas.width = $inputImage.naturalWidth;
     $canvas.height = $inputImage.naturalHeight;
+    $canvas.style.maxWidth = "100%";
     ctx.drawImage($inputImage, 0, 0);
     update();
   };

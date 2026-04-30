@@ -35,7 +35,7 @@ Screen
   角度: ${window.screen.orientation.angle}
   
 devicePixelRatio: ${window.devicePixelRatio}
-  `;
+  `.trim();
 }
 
 window.addEventListener("resize", () => {

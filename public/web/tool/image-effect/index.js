@@ -38,6 +38,13 @@ $file.addEventListener("change", () => {
     $canvas.width = $inputImage.naturalWidth;
     $canvas.height = $inputImage.naturalHeight;
     $canvas.style.maxWidth = "100%";
+    if ($canvas.height > 400) {
+      $canvas.style.height = "400px";
+      $inputImage.style.height = "400px";
+    } else {
+      $canvas.style.height = "";
+      $inputImage.style.height = "";
+    }
     ctx.drawImage($inputImage, 0, 0);
     update();
   };
